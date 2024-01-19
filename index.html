@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border of the box hover effect - by CodingSanchar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" style="--clr: #800000"></div>
+      <div class="card" style="--clr: #00ff00"></div>
+      <div class="card" style="--clr: #0000ff"></div>
+      <div class="card" style="--clr: #ffa500"></div>
+      <div class="card" style="--clr: #e02339"></div>
+      <div class="card" style="--clr: #48e96b"></div>
+      <div class="card" style="--clr: #800080"></div>
+      <div class="card" style="--clr: #ffc300"></div>
+      <div class="card" style="--clr: #00ffff"></div>
+    </div>
+
+    <script>
+      let cards = document.querySelectorAll(".card");
+      cards.forEach((card) => {
+        card.onmousemove = function (e) {
+          let x = e.pageX - card.offsetLeft;
+          let y = e.pageY - card.offsetTop;
+
+          card.style.setProperty("--x", x + "px");
+          card.style.setProperty("--y", y + "px");
+        };
+      });
+    </script>
+  </body>
+</html>
